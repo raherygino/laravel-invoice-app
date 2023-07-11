@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-    <html lang="en" >
+    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
         <head>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <title>{{ env('APP_NAME') }}</title>
+        <title>{{ env('APP_NAME')." | ". trans('login.title') }}</title>
         <meta charset="utf-8"/>
         <meta name="description" content=""/>
         <meta name="keywords" content=""/>
@@ -56,8 +56,8 @@
                         <a href="#" class="mb-7">
                             <img alt="Logo" src="{{ asset('assets/media/logos/custom-3.svg') }}"/>
                         </a>
-                        <h2 class="text-white fw-normal m-0"> 
-                            Branding tools designed for your business
+                        <h2 class="text-white fw-normal m-0">
+                            {{ trans('login.message') }}
                         </h2>         
                     </div>  
                 </div>
@@ -68,16 +68,18 @@
                                 @csrf
                                 <div class="text-center mb-11">
                                     <h1 class="text-dark fw-bolder mb-3">
-                                        Sign In
+                                        {{ trans('login.title') }}
                                     </h1>
                                     <div class="text-gray-400 fw-semibold fs-6" data-kt-translate="general-desc">
-                                        Entrer votre identifiant pour se connecter
+                                        {{ trans('login.sub_title') }}
                                     </div>
                                     @if(isset ($errors) && count($errors) > 0)
                                         @foreach($errors->all() as $error)
                                             <div class="d-flex align-items-center bg-light-danger border-danger rounded p-5 mb-7">
                                                 <div class="flex-grow-1 me-2">
-                                                    <a href="#" class="fw-bold text-gray-800 text-hover-primary fs-6">Authentification error</a>
+                                                    <a href="#" class="fw-bold text-gray-800 text-hover-primary fs-6">
+                                                        {{ trans('auth.failed') }}
+                                                    </a>
                                                     <span class="text-muted fw-semibold d-block">{{ $error }}</span>
                                                 </div>
                                             </div>
@@ -85,19 +87,21 @@
                                     @endif
                                 </div>
                                 <div class="fv-row mb-8">
-                                    <input type="text" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent"/>
+                                    <input type="text" placeholder="{{ trans('form.email') }}" name="email" autocomplete="off" class="form-control bg-transparent"/>
                                 </div>
                                 <div class="fv-row mb-3">
-                                    <input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent"/>
+                                    <input type="password" placeholder="{{ trans('form.password') }}" name="password" autocomplete="off" class="form-control bg-transparent"/>
                                 </div>
                                 <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
                                     <div></div>
                                     <a href="#" class="link-primary">
-                                        Forgot Password ?
+                                        {{ trans('auth.forgot_password') }}
                                     </a>
                                 </div>
                                 <div class="d-grid mb-10">
-                                    <button type="submit" class="btn btn-primary">Sign In</button>
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ trans('login.button') }}
+                                    </button>
                                 </div>
                             </form>
                         </div>

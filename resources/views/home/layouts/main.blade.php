@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <head>
         <title>Eluos | {{ $title }}</title>

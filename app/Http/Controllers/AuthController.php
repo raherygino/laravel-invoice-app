@@ -33,7 +33,7 @@ class AuthController extends Controller
 
         if(!Auth::validate($credentials)):
             return redirect()->to('login')
-                ->withErrors('The provided password or email is incorrect.');
+                ->withErrors(trans('auth.failed'));
         endif;
 
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
