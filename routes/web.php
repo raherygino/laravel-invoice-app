@@ -8,21 +8,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
 
     Route::group(['middleware' => ['guest']], function() {
-
-        /**
-         * Login Routes
-         */
-
-        /*
-        *  Forgot Password
-        */
-
+        Route::get('/login', 'AuthController@show')->name('loginPage');
+        Route::post('/login', 'AuthController@login')->name('loginRequest');
     });
     
     Route::get('welcome', 'MainController@index')->name('welcome');
-    Route::get('/', 'MainController@index')->name('index');
 
     Route::group(['middleware' => ['auth']], function() {
-        
+        Route::get('/', 'MainController@index')->name('index');
+        Route::get('/logout', 'AuthController@logout')->name('logout');
     });
 });

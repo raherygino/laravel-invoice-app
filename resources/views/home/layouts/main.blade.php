@@ -382,7 +382,7 @@
                                         </div>
                                     </div>
                                     <div class="menu-item px-5">
-                                        <a href="authentication/layouts/corporate/sign-in.html" class="menu-link px-5">
+                                        <a href="{{ route('logout') }}" class="menu-link px-5">
                                             Sign Out
                                         </a>
                                     </div>
