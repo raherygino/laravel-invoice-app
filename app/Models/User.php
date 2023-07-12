@@ -22,12 +22,17 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'organization_id',
+        'role',
         'email',
         'phone',
         'password',
         'remember_token',
         'is_active',
     ];
+
+    public function organization() {
+        return $this->belongsTo(Organization::class); 
+    }
 
     public function isActive()
     {

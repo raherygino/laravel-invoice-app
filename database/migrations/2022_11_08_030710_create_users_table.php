@@ -17,13 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('last_name');
             $table->string('first_name');
-            $table->integer('organization_id')->nullable();
-          /*  $table->foreignId('organization_id')
-                ->references('id')
-                ->on('organizations')
-                ->onDelete('cascade');*/
-           // $table->foreignId('organization_id')->references('id')->on('organizations')->onDelete('cascade');
-          //  $table->foreignId("organization_id")->nullable()->constrained("organizations");
+            $table->string('role');
+            $table->integer("organization_id");
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
