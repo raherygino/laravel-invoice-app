@@ -226,14 +226,14 @@
                                         </div>
                                         <div class="separator my-2"></div>
                                         <div class="menu-item px-5">
-                                            <a href="account/overview.html" class="menu-link px-5">
+                                            <a href="{{ route('profile') }}" class="menu-link px-5">
                                                 {{ trans('profile.title') }}
                                             </a>
                                         </div>
                                         <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
                                             <a href="#" class="menu-link px-5">
                                                 <span class="menu-title position-relative">
-                                                    {{ trans('settings.language.title') }}
+                                                    {{ trans('settings.languages.title') }}
                                                     <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">
                                                         {{ trans('settings.languages.french') }} <img class="w-15px h-15px rounded-1 ms-2" src="{{ asset('assets/media/flags/france.svg') }}" alt=""/>
                                                     </span>

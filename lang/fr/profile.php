@@ -2,5 +2,6 @@
 
 return [
     'title' => 'Profile',
-    'logout' => 'Deconnexion'
+    'logout' => 'Deconnexion',
+    'details' => 'Profil details',
 ];

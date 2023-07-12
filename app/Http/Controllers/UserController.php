@@ -52,7 +52,16 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('home.users.show');
+        $user = auth()->user();
+        $organization = $user->organization;
+        return view('home.users.show', compact(['user', 'organization']));
+    }
+
+    public function profile()
+    {
+        $user = auth()->user();
+        $organization = $user->organization;
+        return view('home.users.show', compact(['user', 'organization']));
     }
 
     /**

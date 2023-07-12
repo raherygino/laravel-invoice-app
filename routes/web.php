@@ -18,6 +18,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::group(['middleware' => ['auth']], function() {
         Route::get('/', 'MainController@index')->name('index');
         Route::get('/logout', 'AuthController@logout')->name('logout');
+        Route::get('/profile', 'UserController@profile')->name('profile');
         Route::resource('users', UserController::class);
     });
 });
