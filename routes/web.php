@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
 
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
@@ -17,5 +18,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::group(['middleware' => ['auth']], function() {
         Route::get('/', 'MainController@index')->name('index');
         Route::get('/logout', 'AuthController@logout')->name('logout');
+        Route::resource('users', UserController::class);
     });
 });
